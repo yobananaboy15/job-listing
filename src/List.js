@@ -1,5 +1,9 @@
 import React from "react";
+import ListItem from "./ListItem";
 
-export default function List() {
-  return <div></div>;
-}
+const List = () => {
+  //State för data
+  return <div>kek</div>;
+};
+
+export default List;
