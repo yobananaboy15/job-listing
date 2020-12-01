@@ -7,7 +7,7 @@ const App = () => {
   const [showFilter, setShowFilter] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [jobData, setData] = useState([]);
-  const [filteredJobs, setFilteredJobs] = useState([]);
+  const [filter, setFilter] = useState([]);
 
   //Använd useReducer för allting som har med filtrering att göra?
   //Runs once on the first render to get the jobdata.
@@ -23,21 +23,22 @@ const App = () => {
     setIsLoading(false);
   };
 
-  //Function to add Filter to
+  //Function to add filter. Gets passed down to every list item.
   const addFilter = (category) => {
-    setFilteredJobs([...filteredJobs, category]);
+    setFilter([...filter, category]);
   };
 
+  //Function to remove Filter. Gets passed down to every list item.
   const removeFilter = (category) => {
-    setFilteredJobs([]);
+    setFilter([]);
   };
 
   return (
     <div className="list-container">
-      {showFilter && <Filter filterJobs={filterData} />}
+      {showFilter && <Filter filter={filter} />}
       <List
         jobData={jobData}
-        filteredJobData={filteredJobs}
+        filter={filter}
         addFilter={addFilter}
         removeFilter={removeFilter}
       />
