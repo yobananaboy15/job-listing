@@ -1,39 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import ListItem from "./ListItem";
 
-const List = () => {
-  //State för data
-  //Skapa try catch för datan.
-  //Url för att hämta datan? Var.
-  //Ett state för filtrerad data? listan bör mappa igenom en annan lista. en useeffekt för datan när den ändras.
+const List = ({ jobData, filteredJobData, addFilter, removeFilter }) => {
+  //Den tar emot en array med det som ska filtereras, och en array med data.
+  //Om filteredJobs.length > 0, kör filterJobs. Eller useEffect när filtererdjobs ändras?
+  //Räcker det med att man skickar en referens till
 
-  const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(async () => {
-    //Lägg in try-catch-statement
-    const response = await fetch("data.json");
-    const data = await response.json();
-    setData(data);
-    setIsLoading(false);
-  }, []);
+  const filterList = (jobData) => {
+    jobData.filter((job) => {
+      if (job.id !== "kek") return true;
+    });
+  };
 
   return (
-    <>
-      {isLoading ? (
-        <p>...Loading</p>
-      ) : (
-        <ul>
-          {data.map((job) => {
-            return (
-              <li>
-                <ListItem {...job} />
-              </li>
-            );
-          })}
-        </ul>
-      )}
-    </>
+    <ul>
+      {jobData.map((job) => {
+        return (
+          <li key={job.id}>
+            <ListItem
+              {...job}
+              addFilter={addFilter}
+              removeFilter={removeFilter}
+            />
+          </li>
+        );
+      })}
+    </ul>
   );
 };
 
