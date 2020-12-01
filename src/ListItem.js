@@ -1,5 +1,5 @@
 import React from "react";
-import List from "./List";
+import styles from "./ListItem.module.css";
 
 const ListItem = (props) => {
   const {
@@ -19,7 +19,19 @@ const ListItem = (props) => {
     removeFilter,
   } = props;
 
-  return <div>{tools}</div>;
+  return (
+    <div className={styles["item-div"]}>
+      <img src={logo} alt="" />
+      <div>
+        <p>{company}</p>
+      </div>
+      <div className={styles["tool-div"]}>
+        {tools.map((tool) => {
+          return <span>{tool}</span>;
+        })}
+      </div>
+    </div>
+  );
 };
 
 export default ListItem;
