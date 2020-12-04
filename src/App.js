@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import List from "./List";
 import Filterbar from "./Filterbar";
 import Footer from "./Footer";
+import styles from "./App.module.css";
 
 const App = () => {
   const [showFilter, setShowFilter] = useState(false);
@@ -29,13 +30,27 @@ const App = () => {
   };
 
   //Function to remove Filter. Gets passed down to every list item.
-  const removeFilter = (category) => {
-    setFilter([]);
+  const removeFilter = (filterItem) => {
+    const newFilterArray = [...filter];
+    newFilterArray.splice(newFilterArray.indexOf(filterItem), 1);
+    if (newFilterArray.length === 0) setShowFilter(false);
+    setFilter(new Set([...newFilterArray]));
+  };
+
+  const clearFilter = () => {
+    setFilter(new Set());
+    setShowFilter(false);
   };
 
   return (
-    <div className="list-container">
-      {showFilter && <Filterbar filter={filter} removeFilter={removeFilter} />}
+    <div className={styles["list-container"]}>
+      {showFilter && (
+        <Filterbar
+          filter={filter}
+          removeFilter={removeFilter}
+          clearFilter={clearFilter}
+        />
+      )}
       {!isLoading && (
         <List jobData={jobData} filter={filter} addFilter={addFilter} />
       )}
