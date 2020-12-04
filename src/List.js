@@ -1,5 +1,6 @@
 import React from "react";
 import ListItem from "./ListItem";
+import styles from "./List.module.css";
 
 const List = ({ jobData, filter, addFilter }) => {
   //Loopa igenom filter och kolla i motsvarande arrays.
@@ -13,7 +14,7 @@ const List = ({ jobData, filter, addFilter }) => {
   });
 
   return (
-    <ul>
+    <ul className={styles.list}>
       {filterList.map((job) => {
         return (
           <li key={job.id}>

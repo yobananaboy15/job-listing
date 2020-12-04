@@ -1,5 +1,10 @@
 import React from "react";
+import styles from "./CategoryButton.module.css";
 
 export default function CategoryButton({ addFilter, tool }) {
-  return <button onClick={() => addFilter(tool)}>{tool}</button>;
+  return (
+    <button className={styles["filter-tablet"]} onClick={() => addFilter(tool)}>
+      <span>{tool}</span>
+    </button>
+  );
 }
