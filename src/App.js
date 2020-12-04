@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import List from "./List";
-import Filter from "./Filter";
+import Filterbar from "./Filterbar";
 import Footer from "./Footer";
 
 const App = () => {
   const [showFilter, setShowFilter] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [jobData, setData] = useState([]);
-  const [filter, setFilter] = useState([]);
+  const [filter, setFilter] = useState(new Set());
 
-  //Använd useReducer för allting som har med filtrering att göra?
   //Runs once on the first render to get the jobdata.
   useEffect(() => {
     loadJobData();
@@ -24,8 +23,9 @@ const App = () => {
   };
 
   //Function to add filter. Gets passed down to every list item.
-  const addFilter = (category) => {
-    setFilter([...filter, category]);
+  const addFilter = (tool) => {
+    setFilter(new Set([...filter, tool]));
+    setShowFilter(true);
   };
 
   //Function to remove Filter. Gets passed down to every list item.
@@ -35,13 +35,10 @@ const App = () => {
 
   return (
     <div className="list-container">
-      {showFilter && <Filter filter={filter} />}
-      <List
-        jobData={jobData}
-        filter={filter}
-        addFilter={addFilter}
-        removeFilter={removeFilter}
-      />
+      {showFilter && <Filterbar filter={filter} removeFilter={removeFilter} />}
+      {!isLoading && (
+        <List jobData={jobData} filter={filter} addFilter={addFilter} />
+      )}
       <Footer />
     </div>
   );
