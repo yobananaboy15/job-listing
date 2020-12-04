@@ -1,6 +1,7 @@
 import React from "react";
 import RemoveFilterButton from "./RemoveFilterButton";
 
+//Filterbar to
 const Filterbar = ({ filter, removeFilter, clearFilter }) => {
   return (
     <div>
