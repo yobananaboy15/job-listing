@@ -43,18 +43,20 @@ const App = () => {
   };
 
   return (
-    <div className={styles["list-container"]}>
-      {showFilter && (
-        <Filterbar
-          filter={filter}
-          removeFilter={removeFilter}
-          clearFilter={clearFilter}
-        />
-      )}
-      {!isLoading && (
-        <List jobData={jobData} filter={filter} addFilter={addFilter} />
-      )}
-      <Footer />
+    <div className={styles["page-container"]}>
+      <div className={styles["inner-container"]}>
+        {showFilter && (
+          <Filterbar
+            filter={filter}
+            removeFilter={removeFilter}
+            clearFilter={clearFilter}
+          />
+        )}
+        {!isLoading && (
+          <List jobData={jobData} filter={filter} addFilter={addFilter} />
+        )}
+        <Footer />
+      </div>
     </div>
   );
 };
