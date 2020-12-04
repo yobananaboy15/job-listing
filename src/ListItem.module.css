@@ -1,9 +1,9 @@
-.item-div {
+.job-container {
   display: flex;
   align-items: center;
   border: 1px solid red;
 }
 
-.tool-div {
+.languages-container {
   margin-left: auto;
 }
