@@ -1,10 +1,19 @@
 import React from "react";
 import RemoveFilterButton from "./RemoveFilterButton";
 
-const Filterbar = () => {
+const Filterbar = ({ filter, removeFilter, clearFilter }) => {
   return (
     <div>
-      <img src="./images/icon-remove.svg" alt="" />
+      {[...filter].map((filterItem, index) => {
+        return (
+          <RemoveFilterButton
+            key={index}
+            filterItem={filterItem}
+            removeFilter={removeFilter}
+          />
+        );
+      })}
+      <span onClick={clearFilter}>Clear</span>
     </div>
   );
 };
