@@ -1,27 +1,23 @@
 import React from "react";
 import ListItem from "./ListItem";
 
-const List = ({ jobData, filteredJobData, addFilter, removeFilter }) => {
-  //Den tar emot en array med det som ska filtereras, och en array med data.
-  //Om filteredJobs.length > 0, kör filterJobs. Eller useEffect när filtererdjobs ändras?
-  //Räcker det med att man skickar en referens till
+const List = ({ jobData, filter, addFilter }) => {
+  //Loopa igenom filter och kolla i motsvarande arrays.
 
-  const filterList = (jobData) => {
-    jobData.filter((job) => {
-      if (job.id !== "kek") return true;
-    });
-  };
+  //Filters the jobData array by checking if the job objects contain everything in the filter set.
+  const filterList = jobData.filter((job) => {
+    const categoryArray = [job.role, job.level, ...job.tools, ...job.languages];
+    return [...filter].every((categoryItem) =>
+      categoryArray.includes(categoryItem)
+    );
+  });
 
   return (
     <ul>
-      {jobData.map((job) => {
+      {filterList.map((job) => {
         return (
           <li key={job.id}>
-            <ListItem
-              {...job}
-              addFilter={addFilter}
-              removeFilter={removeFilter}
-            />
+            <ListItem {...job} addFilter={addFilter} />
           </li>
         );
       })}
