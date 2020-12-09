@@ -11,7 +11,7 @@ const ListItem = (props) => {
         props.featured && styles["featured-border"]
       }`}
     >
-      <img src={props.logo} alt="" />
+      <img src={require("" + props.logo).default} alt="" />
       <CompanyContainer {...props} />
       <LanguageContainer {...props} />
     </div>
