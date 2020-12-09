@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import List from "./List";
-import Filterbar from "./Filterbar";
-import Footer from "./Footer";
+import List from "../List/List";
+import Filterbar from "../Filterbar/Filterbar";
 import styles from "./App.module.css";
 
 const App = () => {
@@ -19,7 +18,7 @@ const App = () => {
     const response = await fetch("data.json");
     const jobData = await response.json();
     setData(jobData);
-    setIsLoading(false);
+    setIsLoading(false); //behövs den här ens?
   };
 
   return (
@@ -32,7 +31,6 @@ const App = () => {
         {!isLoading && (
           <List jobData={jobData} filter={filter} setFilter={setFilter} />
         )}
-        <Footer />
       </div>
     </div>
   );

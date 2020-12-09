@@ -1,0 +1,16 @@
+.filter-tablet {
+  font-size: 15px;
+  font-family: "Spartan";
+  font-weight: 700;
+  background-color: hsl(180, 31%, 95%);
+  color: hsl(180, 29%, 50%);
+  border: none;
+  margin: 0 0.25rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.filter-tablet:hover {
+  background-color: hsl(180, 29%, 50%);
+  color: white;
+}

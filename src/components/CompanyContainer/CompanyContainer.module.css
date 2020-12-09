@@ -1,0 +1,36 @@
+.company-container {
+  font-size: 15px;
+  font-family: "Spartan";
+  margin-left: 1.5rem;
+}
+
+.company {
+  color: hsl(180, 29%, 50%);
+}
+
+.new-tag {
+  background-color: hsl(180, 29%, 50%);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+
+.featured-tag {
+  background-color: hsl(180, 14%, 20%);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+
+.position {
+  color: hsl(180, 14%, 20%);
+}
+
+.position:hover {
+  color: hsl(180, 29%, 50%);
+}
+
+/* - Light Grayish Cyan (Background): hsl(180, 52%, 96%)
+- Light Grayish Cyan (Filter Tablets): hsl(180, 31%, 95%)
+- Dark Grayish Cyan: hsl(180, 8%, 52%)
+- Very Dark Grayish Cyan: hsl(180, 14%, 20%) */

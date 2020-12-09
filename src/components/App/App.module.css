@@ -1,0 +1,25 @@
+/* * {
+  padding: 0;
+  margin: 0;
+} */
+
+.page-container {
+  background-color: hsl(180, 52%, 96%);
+  height: 100vh;
+}
+
+.header {
+  mask-image: url(../../images/bg-header-desktop.svg);
+  background-color: hsl(180, 29%, 50%);
+  height: 156px;
+}
+
+.header-container {
+  margin-bottom: 2rem;
+  background-color: hsl(180, 14%, 20%);
+}
+
+.inner-container {
+  margin: 0 auto;
+  max-width: 1000px;
+}
