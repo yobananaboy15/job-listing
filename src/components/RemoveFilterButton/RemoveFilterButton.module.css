@@ -18,5 +18,9 @@
   height: 100%;
   border: none;
   border-radius: 0 0.25rem 0.25rem 0;
-  background-color: hsl(180, 14%, 20%);
+  background-color: hsl(180, 29%, 50%);
+}
+
+.remove-button:hover{
+  background-color: hsl(180, 14%, 20%)
 }

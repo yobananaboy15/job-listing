@@ -1,6 +1,8 @@
 .filterbar {
   position: absolute;
   top: 8rem;
+  /* left: 0;
+  right: 0; */
   border-radius: 0.25rem;
   background-color: white;
   box-shadow: 5px 2px 20px hsl(180, 29%, 50%);
@@ -9,7 +11,8 @@
   flex-wrap: wrap;
   justify-content: start;
   align-items: center;
-  max-width: 80%;
+  min-width: 1000px;
+  margin: 0 auto;
 }
 
 .clear-span {

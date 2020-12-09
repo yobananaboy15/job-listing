@@ -6,7 +6,7 @@ export default function RemoveFilterButton({ filterItem, removeFilter }) {
   return (
     <div className={styles["container-div"]}>
       <div className={styles["category-div"]}>{filterItem}</div>
-      <div className={styles["button-container"]}>
+      <div>
         <button
           className={styles["remove-button"]}
           onClick={() => removeFilter(filterItem)}
