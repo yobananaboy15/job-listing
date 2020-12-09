@@ -5,7 +5,6 @@ import Footer from "./Footer";
 import styles from "./App.module.css";
 
 const App = () => {
-  const [showFilter, setShowFilter] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [jobData, setData] = useState([]);
   const [filter, setFilter] = useState(new Set());
@@ -23,37 +22,15 @@ const App = () => {
     setIsLoading(false);
   };
 
-  //Function to add filter. Gets passed down to every list item.
-  const addFilter = (tool) => {
-    setFilter(new Set([...filter, tool]));
-    setShowFilter(true);
-  };
-
-  //Function to remove Filter. Gets passed down to every list item.
-  const removeFilter = (filterItem) => {
-    const newFilterArray = [...filter];
-    newFilterArray.splice(newFilterArray.indexOf(filterItem), 1);
-    if (newFilterArray.length === 0) setShowFilter(false);
-    setFilter(new Set([...newFilterArray]));
-  };
-
-  const clearFilter = () => {
-    setFilter(new Set());
-    setShowFilter(false);
-  };
-
   return (
     <div className={styles["page-container"]}>
+      <div className={styles["header-container"]}>
+        <header className={styles.header}></header>
+      </div>
       <div className={styles["inner-container"]}>
-        {showFilter && (
-          <Filterbar
-            filter={filter}
-            removeFilter={removeFilter}
-            clearFilter={clearFilter}
-          />
-        )}
+        {filter.size > 0 && <Filterbar filter={filter} setFilter={setFilter} />}
         {!isLoading && (
-          <List jobData={jobData} filter={filter} addFilter={addFilter} />
+          <List jobData={jobData} filter={filter} setFilter={setFilter} />
         )}
         <Footer />
       </div>
