@@ -26,7 +26,9 @@ const Filterbar = ({ filter, setFilter }) => {
           />
         );
       })}
-      <span onClick={clearFilter}>Clear</span>
+      <span class={styles["clear-span"]} onClick={clearFilter}>
+        Clear
+      </span>
     </div>
   );
 };

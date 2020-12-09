@@ -1,34 +1,22 @@
-.category-span {
+.container-div {
   font-size: 15px;
   font-family: "Spartan";
   font-weight: 700;
+  border: none;
+  display: flex;
+  margin: 0 0.5rem;
+}
+
+.category-div {
   background-color: hsl(180, 31%, 95%);
   color: hsl(180, 29%, 50%);
-  border: none;
-  margin: 0 0.25rem;
   padding: 0.5rem;
-  border-radius: 0.25rem;
-  display: flex;
-  flex-wrap: nowrap;
+  border-radius: 0.25rem 0 0 0.25rem;
 }
 
-/* .filter-container {
-  position: relative;
-} */
-
-.button-container {
-  background-color: red;
-}
-
-.remove-icon {
+.remove-button {
   height: 100%;
   border: none;
-  background-color: red;
-  /* position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0; */
+  border-radius: 0 0.25rem 0.25rem 0;
+  background-color: hsl(180, 14%, 20%);
 }

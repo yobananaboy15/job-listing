@@ -5,4 +5,13 @@
   background-color: white;
   box-shadow: 5px 2px 20px hsl(180, 29%, 50%);
   padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  max-width: 80%;
+}
+
+.clear-span {
+  margin-left: auto;
 }
