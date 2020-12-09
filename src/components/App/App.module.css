@@ -5,7 +5,7 @@
 
 .page-container {
   background-color: hsl(180, 52%, 96%);
-  height: 100vh;
+  min-height: calc(100vh + 100vh);
 }
 
 .header {
