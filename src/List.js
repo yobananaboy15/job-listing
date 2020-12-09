@@ -2,7 +2,7 @@ import React from "react";
 import ListItem from "./ListItem";
 import styles from "./List.module.css";
 
-const List = ({ jobData, filter, addFilter }) => {
+const List = ({ jobData, filter, setFilter }) => {
   //Loopa igenom filter och kolla i motsvarande arrays.
 
   //Filters the jobData array by checking if the every job object contain everything in the filter set.
@@ -18,7 +18,7 @@ const List = ({ jobData, filter, addFilter }) => {
       {filterList.map((job) => {
         return (
           <li key={job.id}>
-            <ListItem {...job} addFilter={addFilter} />
+            <ListItem {...job} filter={filter} setFilter={setFilter} />
           </li>
         );
       })}
