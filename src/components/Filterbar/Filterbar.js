@@ -2,8 +2,8 @@ import React from "react";
 import RemoveFilterButton from "../RemoveFilterButton/RemoveFilterButton";
 import styles from "./Filterbar.module.css";
 
-//Filterbar to
 const Filterbar = ({ filter, setFilter }) => {
+  
   const removeFilter = (filterItem) => {
     const newFilterArray = [...filter];
     newFilterArray.splice(newFilterArray.indexOf(filterItem), 1);

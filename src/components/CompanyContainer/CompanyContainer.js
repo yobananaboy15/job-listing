@@ -14,17 +14,16 @@ export default function CompanyContainer(props) {
 
   return (
     <div className={styles["company-container"]}>
-      <p>
+      <div>
         <span className={styles.company}>{company}</span>
         {renamedNew && <span className={styles["new-tag"]}>NEW!</span>}
         {featured && <span className={styles["featured-tag"]}>FEATURED</span>}
-      </p>
-      <h3 className={styles.position}>{position}</h3>
-      <p>
-        {postedAt}
-        {contract}
+      </div>
+      <div className={styles.position}>{position}</div>
+      <div className={styles.details}>
+        {postedAt} <span>·</span> {contract} <span>·</span>
         {location}
-      </p>
+      </div>
     </div>
   );
 }

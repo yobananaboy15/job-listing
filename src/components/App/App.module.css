@@ -5,7 +5,8 @@
 
 .page-container {
   background-color: hsl(180, 52%, 96%);
-  min-height: calc(100vh + 100vh);
+  min-height: 100vh;
+  width: 100vw;
 }
 
 .header {
@@ -22,5 +23,6 @@
 .inner-container {
   position: relative;
   margin: 0 auto;
+  width: 80%;
   max-width: 1000px;
 }
