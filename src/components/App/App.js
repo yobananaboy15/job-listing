@@ -22,7 +22,7 @@ const App = () => {
   };
 
   return (
-    <div className={styles["page-container"]}>
+    <>
       <div className={styles["header-container"]}>
         <header className={styles.header}></header>
       </div>
@@ -32,7 +32,7 @@ const App = () => {
           <List jobData={jobData} filter={filter} setFilter={setFilter} />
         )}
       </div>
-    </div>
+    </>
   );
 };
 
