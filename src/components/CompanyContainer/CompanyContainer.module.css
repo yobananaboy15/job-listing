@@ -20,6 +20,7 @@
   background-color: hsl(180, 29%, 50%);
   color: white;
   padding: 0.5rem;
+  padding-top: 0.6rem;
   border-radius: 1rem;
   font-weight: 700;
   margin-right: 0.5rem;
@@ -30,6 +31,7 @@
   background-color: hsl(180, 14%, 20%);
   color: white;
   padding: 0.5rem;
+  padding-top: 0.6rem;
   border-radius: 1rem;
   font-weight: 700;
 }
