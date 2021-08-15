@@ -8,17 +8,15 @@ const App = () => {
   const [jobData, setData] = useState([]);
   const [filter, setFilter] = useState(new Set());
 
-  //Runs once on the first render to get the jobdata.
   useEffect(() => {
     loadJobData();
   }, []);
 
-  //Fetches job data in json form and updates the dataState
   const loadJobData = async () => {
     const response = await fetch("data.json");
     const jobData = await response.json();
     setData(jobData);
-    setIsLoading(false); //behövs den här ens?
+    setIsLoading(false);
   };
 
   return (

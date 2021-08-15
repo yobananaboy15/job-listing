@@ -17,9 +17,7 @@ const List = ({ jobData, filter, setFilter }) => {
     <ul className={styles.list}>
       {filterList.map((job) => {
         return (
-          <li key={job.id}>
-            <ListItem {...job} filter={filter} setFilter={setFilter} />
-          </li>
+            <ListItem {...job} filter={filter} setFilter={setFilter} key={job.id}/>
         );
       })}
     </ul>

@@ -1,8 +1,13 @@
 .company-container {
   margin-left: 1.5rem;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   margin-right: 2rem;
+
+  @media (max-width: 700px) {
+    margin: 0;
+  }
 }
 
 .company-container > div {
@@ -48,13 +53,17 @@
 
 .details {
   color: hsl(180, 8%, 52%);
+
+  @media (max-width: 700px) {
+    align-self: stretch;
+    padding-bottom: 0.5rem;
+    border-bottom: solid 1px hsl(180, 8%, 52%);
+  }
 }
 
 .details > span {
   margin: 0 0.5rem;
 }
 
-/* - Light Grayish Cyan (Background): hsl(180, 52%, 96%)
-- Light Grayish Cyan (Filter Tablets): hsl(180, 31%, 95%)
-- Dark Grayish Cyan: hsl(180, 8%, 52%)
-- Very Dark Grayish Cyan: hsl(180, 14%, 20%) */
+@media (max-width: 700px) {
+}

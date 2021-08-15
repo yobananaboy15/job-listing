@@ -1,6 +1,6 @@
 import React from "react";
 import CategoryButton from "../CategoryButton/CategoryButton";
-import styles from "./LanguageContainer.module.css";
+import styles from "./LanguageContainer.module.scss";
 
 //Creates a container for all the languages and tools.
 

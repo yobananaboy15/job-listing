@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./CompanyContainer.module.css";
+import styles from "./CompanyContainer.module.scss";
 
 export default function CompanyContainer(props) {
   const {
