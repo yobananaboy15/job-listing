@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./CategoryButton.module.css";
+import styles from "./CategoryButton.module.scss";
 
 export default function CategoryButton({ tool, setFilter, filter }) {
   const addFilter = (tool) => {
