@@ -7,7 +7,7 @@ export default function CategoryButton({ tool, setFilter, filter }) {
   };
   return (
     <button className={styles["filter-tablet"]} onClick={() => addFilter(tool)}>
-      <span>{tool}</span>
+      <span className={styles["tool"]}>{tool}</span>
     </button>
   );
 }

@@ -6,9 +6,8 @@
   margin-right: 2rem;
 
   @media (max-width: 700px) {
+    margin-bottom: 1rem;
     align-self: stretch;
-    margin: 0;
-    flex-shrink: 1;
   }
 }
 
@@ -50,6 +49,10 @@
   color: hsl(180, 14%, 20%);
   font-weight: 700;
   font-size: 18px;
+
+  @media (max-width: 700px) {
+    font-size: 15px;
+  }
 }
 
 .position:hover {
@@ -64,6 +67,7 @@
   @media (max-width: 700px) {
     padding-bottom: 0.5rem;
     border-bottom: solid 1px hsl(180, 8%, 52%);
+    font-size: 13px;
   }
 }
 

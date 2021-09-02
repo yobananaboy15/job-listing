@@ -1,9 +1,8 @@
 .filter-tablet {
-  font-weight: 700;
   background-color: hsl(180, 31%, 95%);
   color: hsl(180, 29%, 50%);
   border: none;
-  margin: 0.25rem 0.25rem;
+  margin: 0.25rem 0.5rem;
   padding: 0.5rem;
   padding-top: 0.6rem;
   border-radius: 0.25rem;
@@ -11,6 +10,11 @@
   @media (max-width: 700px) {
     margin: 0.25rem 0.5rem 0.25rem 0rem;
   }
+}
+
+.tool {
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .filter-tablet:hover {
