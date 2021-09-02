@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./RemoveFilterButton.module.css";
+import styles from "./RemoveFilterButton.module.scss";
 import crossIcon from "../../images/icon-remove.svg";
 
 export default function RemoveFilterButton({ filterItem, removeFilter }) {

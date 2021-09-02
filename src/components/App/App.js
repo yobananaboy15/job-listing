@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import List from "../List/List";
 import Filterbar from "../Filterbar/Filterbar";
-import styles from "./App.module.css";
+import styles from "./App.module.scss";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);

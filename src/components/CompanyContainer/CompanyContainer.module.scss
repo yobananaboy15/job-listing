@@ -6,7 +6,7 @@
   margin-right: 2rem;
 
   @media (max-width: 700px) {
-    margin-bottom: 1rem;
+    margin: 0;
     align-self: stretch;
   }
 }
@@ -23,11 +23,11 @@
 }
 
 .new-tag {
+  display: inline-block;
   font-size: 0.8rem;
   background-color: hsl(180, 29%, 50%);
   color: white;
-  padding: 0.5rem;
-  padding-top: 0.7rem;
+  padding: 0.6rem 0.5rem 0.4rem 0.5rem;
   border-radius: 1rem;
   font-weight: 700;
   margin-right: 0.5rem;
@@ -35,11 +35,11 @@
 }
 
 .featured-tag {
+  display: inline-block;
   font-size: 0.8rem;
   background-color: hsl(180, 14%, 20%);
   color: white;
-  padding: 0.5rem;
-  padding-top: 0.7rem;
+  padding: 0.6rem 0.5rem 0.4rem 0.5rem;
   border-radius: 1rem;
   font-weight: 700;
   font-size: 11px;
