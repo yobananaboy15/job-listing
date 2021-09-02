@@ -24,8 +24,14 @@ const App = () => {
       <div className={styles["header-container"]}>
         <header className={styles.header}></header>
       </div>
-      <div className={styles["inner-container"]}>
-        {filter.size > 0 && <Filterbar filter={filter} setFilter={setFilter} />}
+      {filter.size > 0 && <Filterbar filter={filter} setFilter={setFilter} />}
+      <div
+        className={
+          filter.size > 0
+            ? styles["inner-container"]
+            : styles["inner-container2"]
+        }
+      >
         {!isLoading && (
           <List jobData={jobData} filter={filter} setFilter={setFilter} />
         )}

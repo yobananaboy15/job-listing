@@ -15,16 +15,18 @@ const Filterbar = ({ filter, setFilter }) => {
 
   return (
     <div className={styles.filterbar}>
-      {[...filter].map((filterItem, index) => {
-        return (
-          <RemoveFilterButton
-            key={index}
-            filterItem={filterItem}
-            removeFilter={removeFilter}
-            setFilter={setFilter}
-          />
-        );
-      })}
+      <div className={styles.testing}>
+        {[...filter].map((filterItem, index) => {
+          return (
+            <RemoveFilterButton
+              key={index}
+              filterItem={filterItem}
+              removeFilter={removeFilter}
+              setFilter={setFilter}
+            />
+          );
+        })}
+      </div>
       <span class={styles["clear-span"]} onClick={clearFilter}>
         Clear
       </span>

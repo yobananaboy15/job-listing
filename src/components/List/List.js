@@ -1,6 +1,6 @@
 import React from "react";
 import ListItem from "../ListItem/ListItem";
-import styles from "./List.module.css";
+import styles from "./List.module.scss";
 
 const List = ({ jobData, filter, setFilter }) => {
   const filterList = jobData.filter((job) => {

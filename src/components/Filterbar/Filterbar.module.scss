@@ -1,16 +1,24 @@
 .filterbar {
-  position: absolute;
-  top: -7rem;
+  max-width: 1000px;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  top: -2rem;
   right: 0;
   left: 0;
   border-radius: 0.25rem;
   background-color: white;
   box-shadow: 0.25rem 0.25rem 0.5rem hsla(180, 29%, 50%, 0.5);
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
+}
+
+.testing {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .clear-span {
@@ -20,6 +28,10 @@
   font-size: 13px;
   border-bottom: 1px solid transparent;
   padding-top: 1px;
+
+  @media (max-width: 700px) {
+    align-self: center;
+  }
 }
 
 .clear-span:hover {
