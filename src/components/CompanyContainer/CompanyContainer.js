@@ -21,8 +21,7 @@ export default function CompanyContainer(props) {
       </div>
       <div className={styles.position}>{position}</div>
       <div className={styles.details}>
-        {postedAt} <span>·</span> {contract} <span>·</span>
-        {location}
+        {postedAt} <span>·</span> {contract} <span>·</span> {location}
       </div>
     </div>
   );

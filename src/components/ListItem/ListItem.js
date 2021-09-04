@@ -11,7 +11,11 @@ const ListItem = (props) => {
         props.featured && styles["featured-border"]
       }`}
     >
-      <img src={require("../../" + props.logo.substring(2)).default} alt="" />
+      <img
+        className={styles["logo"]}
+        src={require("../../" + props.logo.substring(2)).default}
+        alt=""
+      />
       <CompanyContainer {...props} />
       <LanguageContainer {...props} />
     </li>
