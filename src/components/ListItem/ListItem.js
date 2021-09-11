@@ -4,7 +4,6 @@ import CompanyContainer from "../CompanyContainer/CompanyContainer";
 import LanguageContainer from "../LanguageContainer/LanguageContainer";
 
 const ListItem = (props) => {
-  //Man skulle kunna kunna göra en categoryBar för abstraktion
   return (
     <li
       className={`${styles["job-container"]} ${
