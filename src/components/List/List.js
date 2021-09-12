@@ -1,30 +1,52 @@
-import React from "react";
-import ListItem from "../ListItem/ListItem";
+import React, { useState, useEffect, useContext } from "react";
+import { FilterContext } from "../../context/FilterContext";
+import { ListItem } from "../ListItem/ListItem";
 import styles from "./List.module.scss";
 
-//Vad fan är detta??!
+const List = () => {
+  const { filter } = useContext(FilterContext);
 
-const List = ({ jobData, filter, setFilter }) => {
-  const filterList = jobData.filter((job) => {
-    const categoryArray = [job.role, job.level, ...job.tools, ...job.languages];
-    return [...filter].every((categoryItem) =>
-      categoryArray.includes(categoryItem)
-    );
-  });
+  const [jobData, setData] = useState([]);
+  const [filteredJobs, setFilteredJobs] = useState([]);
+
+  useEffect(() => {
+    fetch("data.json")
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data);
+      });
+  }, []);
+
+  useEffect(() => {
+    if (jobData.length) {
+      const filterList = () => {
+        return jobData.filter((job) => {
+          const filterable = new Set([
+            job.role,
+            job.level,
+            ...job.tools,
+            ...job.languages,
+          ]);
+
+          return [...filter].every((categoryItem) =>
+            filterable.has(categoryItem)
+          );
+        });
+      };
+      setFilteredJobs(filterList());
+    }
+  }, [jobData, filter]);
 
   return (
-    <ul className={styles.list}>
-      {filterList.map((job) => {
-        return (
-          <ListItem
-            {...job}
-            filter={filter}
-            setFilter={setFilter}
-            key={job.id}
-          />
-        );
-      })}
-    </ul>
+    <>
+      {filteredJobs.length && (
+        <ul className={styles.list}>
+          {filteredJobs.map((job) => {
+            return <ListItem {...job} key={job.id} />;
+          })}
+        </ul>
+      )}
+    </>
   );
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./RemoveFilterButton.module.scss";
 import crossIcon from "../../images/icon-remove.svg";
 
-export default function RemoveFilterButton({ filterItem, removeFilter }) {
+export const RemoveFilterButton = ({ filterItem, removeFilter }) => {
   return (
     <div className={styles["container-div"]}>
       <div className={styles["category-div"]}>{filterItem}</div>
@@ -16,4 +16,4 @@ export default function RemoveFilterButton({ filterItem, removeFilter }) {
       </div>
     </div>
   );
-}
+};

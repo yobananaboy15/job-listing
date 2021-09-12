@@ -1,8 +1,10 @@
-import React from "react";
-import RemoveFilterButton from "../RemoveFilterButton/RemoveFilterButton";
+import React, { useContext } from "react";
+import { FilterContext } from "../../context/FilterContext";
+import { RemoveFilterButton } from "../RemoveFilterButton/RemoveFilterButton";
 import styles from "./Filterbar.module.scss";
 
-const Filterbar = ({ filter, setFilter }) => {
+export const Filterbar = () => {
+  const { filter, setFilter } = useContext(FilterContext);
   const removeFilter = (filterItem) => {
     const newFilterArray = [...filter];
     newFilterArray.splice(newFilterArray.indexOf(filterItem), 1);
@@ -33,5 +35,3 @@ const Filterbar = ({ filter, setFilter }) => {
     </div>
   );
 };
-
-export default Filterbar;

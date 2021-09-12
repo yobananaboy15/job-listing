@@ -3,22 +3,20 @@ import styles from "./ListItem.module.scss";
 import CompanyContainer from "../CompanyContainer/CompanyContainer";
 import LanguageContainer from "../LanguageContainer/LanguageContainer";
 
-const ListItem = (props) => {
+export const ListItem = (job) => {
   return (
     <li
       className={`${styles["job-container"]} ${
-        props.featured && styles["featured-border"]
+        job.featured && styles["featured-border"]
       }`}
     >
       <img
         className={styles["logo"]}
-        src={require("../../" + props.logo.substring(2)).default}
+        src={require("../../" + job.logo.substring(2)).default}
         alt=""
       />
-      <CompanyContainer {...props} />
-      <LanguageContainer {...props} />
+      <CompanyContainer {...job} />
+      <LanguageContainer {...job} />
     </li>
   );
 };
-
-export default ListItem;

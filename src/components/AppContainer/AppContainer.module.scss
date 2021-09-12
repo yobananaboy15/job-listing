@@ -1,0 +1,13 @@
+$inner-container-margin: 20px;
+
+.inner-container {
+  margin: $inner-container-margin auto;
+  width: 80%;
+  max-width: 1000px;
+}
+
+.inner-container2 {
+  margin: calc(67.25px + #{$inner-container-margin}) auto;
+  width: 80%;
+  max-width: 1000px;
+}
