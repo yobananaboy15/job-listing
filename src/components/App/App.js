@@ -9,7 +9,7 @@ const App = () => {
   return (
     <FilterContext.Provider value={{ filter, setFilter }}>
       <Header />
-      {filter.size > 0 ? null : <Filterbar />}
+      {filter.size > 0 && <Filterbar />}
       <AppContainer />
     </FilterContext.Provider>
   );
