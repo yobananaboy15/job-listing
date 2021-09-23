@@ -39,7 +39,7 @@ const List = () => {
 
   return (
     <>
-      {filteredJobs.length && (
+      {filteredJobs.length > 0 && (
         <ul className={styles.list}>
           {filteredJobs.map((job) => {
             return <ListItem {...job} key={job.id} />;
